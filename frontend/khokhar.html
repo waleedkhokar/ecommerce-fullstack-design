@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1584">
+<title>Waleed Khokhar – LinkedIn Cover</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    background: #020917;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .cover {
+    width: 1584px;
+    height: 396px;
+    position: relative;
+    background: linear-gradient(135deg, #020917 0%, #041230 40%, #061a45 70%, #020d28 100%);
+    overflow: hidden;
+  }
+
+  /* ── Grid Lines ── */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,180,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,180,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* ── Glowing orbs ── */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+  }
+  .orb-1 { width: 400px; height: 300px; background: #0066ff; top: -80px; left: -60px; }
+  .orb-2 { width: 320px; height: 260px; background: #00d4ff; top: 100px; right: 80px; opacity: 0.12; }
+  .orb-3 { width: 200px; height: 200px; background: #3b82f6; bottom: -60px; left: 500px; opacity: 0.14; }
+
+  /* ── Scanline overlay ── */
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.08) 3px,
+      rgba(0,0,0,0.08) 4px
+    );
+  }
+
+  /* ── Decorative code lines left side ── */
+  .code-lines {
+    position: absolute;
+    left: 32px;
+    top: 20px;
+    opacity: 0.07;
+    font-size: 10px;
+    color: #61dafb;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    white-space: pre;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── Accent line ── */
+  .accent-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, #00b4ff 30%, #0066ff 70%, transparent 100%);
+  }
+
+  .accent-line-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #0066ff, #00d4ff 40%, #0066ff 80%, transparent);
+    opacity: 0.6;
+  }
+
+  /* ── Corner bracket ── */
+  .bracket-tl, .bracket-br {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-color: rgba(0,180,255,0.35);
+    border-style: solid;
+  }
+  .bracket-tl { top: 16px; left: 16px; border-width: 2px 0 0 2px; }
+  .bracket-br { bottom: 16px; right: 16px; border-width: 0 2px 2px 0; }
+
+  /* ════════════════════════════════
+     MAIN TEXT BLOCK — center-left
+  ════════════════════════════════ */
+  .text-block {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+  }
+
+  .label-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #00b4ff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+
+  .title-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(200,230,255,0.75);
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .title-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 4px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-shadow: 0 0 40px rgba(0,180,255,0.4), 0 2px 20px rgba(0,0,0,0.8);
+  }
+
+  /* Underline glow */
+  .name-divider {
+    width: 220px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00b4ff, #0066ff, transparent);
+    margin: 0 auto 16px;
+    border-radius: 2px;
+  }
+
+  .website-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .website-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+  }
+
+  .website-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    color: #60c8ff;
+    letter-spacing: 1.5px;
+    opacity: 0.9;
+  }
+
+  /* ════════════════════════════════
+     TECH ICONS — bottom strip
+  ════════════════════════════════ */
+  .icons-strip {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    z-index: 10;
+  }
+
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.88;
+  }
+
+  .icon-item:hover { opacity: 1; }
+
+  .icon-svg {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 6px rgba(0,180,255,0.3));
+  }
+
+  .icon-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5px;
+    font-weight: 500;
+    color: rgba(180,210,255,0.65);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* Divider dots */
+  .icon-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(0,180,255,0.3);
+    margin-bottom: 12px;
+  }
+
+  /* ── Floating ambient icons (background, large & blurred) ── */
+  .float-icon {
+    position: absolute;
+    opacity: 0.05;
+    filter: blur(1px) saturate(0.5);
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <!-- Background layers -->
+  <div class="grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="scanlines"></div>
+
+  <!-- Decorative code text -->
+  <div class="code-lines">const dev = new FullStack({
+  frontend: ['React', 'Next.js', 'TypeScript'],
+  backend: ['Node.js', 'Express', 'Python'],
+  database: ['MongoDB', 'SQL', 'PostgreSQL'],
+  devops: ['Docker', 'Vercel', 'CI/CD'],
+  design: ['UI/UX', 'Figma', 'Tailwind']
+});</div>
+
+  <!-- Accent borders -->
+  <div class="accent-line"></div>
+  <div class="accent-line-bottom"></div>
+  <div class="bracket-tl"></div>
+  <div class="bracket-br"></div>
+
+  <!-- ══ MAIN TEXT ══ -->
+  <div class="text-block">
+    <div class="label-tag">// Portfolio &amp; Profile</div>
+    <div class="title-role">Full-Stack Web Developer</div>
+    <div class="title-name">Waleed Khokhar</div>
+    <div class="name-divider"></div>
+    <div class="website-row">
+      <!-- Globe icon -->
+      <svg class="website-icon" viewBox="0 0 24 24" fill="none" stroke="#60c8ff" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span class="website-url">waledkhokar.vercel.app</span>
+    </div>
+  </div>
+
+  <!-- ══ ICON STRIP ══ -->
+  <div class="icons-strip">
+
+    <!-- React -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="2.5" fill="#61DAFB"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/>
+      </svg>
+      <span class="icon-label">React</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- Next.js -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="#000" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+        <path d="M7 17V7l9.5 11.5c.5.6 1.5.2 1.5-.6V7" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <line x1="7" y1="7" x2="7" y2="17" stroke="white" stroke-width="1.5"/>
+      </svg>
+      <span class="icon-label">Next.js</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- Node.js -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#339933" opacity="0.9"/>
+        <text x="12" y="15.5" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="monospace">JS</text>
+      </svg>
+      <span class="icon-label">Node.js</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- JavaScript -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect width="24" height="24" rx="3" fill="#F7DF1E"/>
+        <text x="12" y="17" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="monospace">JS</text>
+      </svg>
+      <span class="icon-label">JavaScript</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- TypeScript -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect width="24" height="24" rx="3" fill="#3178C6"/>
+        <text x="12" y="17" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="monospace">TS</text>
+      </svg>
+      <span class="icon-label">TypeScript</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- Docker -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M13.5 9H16v2.5h2.5c.6-1.4.4-3.5-.8-5l-.8 1L16 6c-1.5-1.5-3.5-1.8-5.5-1L9 6.5C7.5 8 7 10 7.5 11.5H10V9h1.5V7H13v2h.5z" fill="#2496ED"/>
+        <path d="M6 12.5c-1.5 0-2.5.8-3 2 .5.2 1 .3 1.5.3H19c.5-1.5-.2-4-2.5-4.8v.5c0 1-.5 2-1.5 2H6z" fill="#2496ED"/>
+        <rect x="8" y="9" width="2" height="2" rx="0.3" fill="#2496ED"/>
+        <rect x="10.5" y="9" width="2" height="2" rx="0.3" fill="#2496ED"/>
+        <rect x="8" y="6.5" width="2" height="2" rx="0.3" fill="#2496ED"/>
+        <rect x="10.5" y="6.5" width="2" height="2" rx="0.3" fill="#2496ED"/>
+        <rect x="13" y="6.5" width="2" height="2" rx="0.3" fill="#2496ED"/>
+      </svg>
+      <span class="icon-label">Docker</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- Python -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M12 2C9 2 7 3.5 7 5.5V8h5v1H5.5C3.5 9 2 11 2 13s1.5 4 3.5 4H7v-2.5c0-2 2-3.5 5-3.5s5 1.5 5 3.5V19c0 2-2 3-5 3s-5-1-5-3" fill="none" stroke="#3776AB" stroke-width="1.2"/>
+        <path d="M12 22c3 0 5-1 5-3v-2.5H12v-1h6.5c2 0 3.5-2 3.5-4s-1.5-4-3.5-4H17v2.5c0 2-2 3.5-5 3.5" fill="none" stroke="#FFD43B" stroke-width="1.2"/>
+        <circle cx="9.5" cy="5.5" r="1" fill="#3776AB"/>
+        <circle cx="14.5" cy="18.5" r="1" fill="#FFD43B"/>
+      </svg>
+      <span class="icon-label">Python</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- SQL -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="6" rx="8" ry="3" fill="#00618A" stroke="#00818A" stroke-width="0.5"/>
+        <path d="M4 6v4c0 1.7 3.6 3 8 3s8-1.3 8-3V6" fill="#00618A" opacity="0.8"/>
+        <path d="M4 10v4c0 1.7 3.6 3 8 3s8-1.3 8-3v-4" fill="#00618A" opacity="0.6"/>
+        <path d="M4 14v4c0 1.7 3.6 3 8 3s8-1.3 8-3v-4" fill="#00618A" opacity="0.4"/>
+        <text x="12" y="7.5" text-anchor="middle" fill="white" font-size="4" font-weight="bold" font-family="monospace">SQL</text>
+      </svg>
+      <span class="icon-label">SQL</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- UI/UX -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="15" rx="2" fill="none" stroke="#A259FF" stroke-width="1.5"/>
+        <circle cx="7" cy="10" r="2" fill="#A259FF" opacity="0.7"/>
+        <circle cx="12" cy="8" r="2" fill="#F24E1E" opacity="0.7"/>
+        <circle cx="17" cy="10" r="2" fill="#FF7262" opacity="0.7"/>
+        <line x1="9" y1="21" x2="15" y2="21" stroke="#A259FF" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="12" y1="18" x2="12" y2="21" stroke="#A259FF" stroke-width="1.5"/>
+      </svg>
+      <span class="icon-label">UI / UX</span>
+    </div>
+
+    <div class="icon-dot"></div>
+
+    <!-- Data Analytics -->
+    <div class="icon-item">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <polyline points="3,17 8,12 13,14 21,6" fill="none" stroke="#00D4AA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="17,6 21,6 21,10" fill="none" stroke="#00D4AA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="3" y1="20" x2="21" y2="20" stroke="rgba(0,212,170,0.3)" stroke-width="1"/>
+        <circle cx="8" cy="12" r="1.5" fill="#00D4AA"/>
+        <circle cx="13" cy="14" r="1.5" fill="#00D4AA"/>
+        <circle cx="21" cy="6" r="1.5" fill="#00D4AA"/>
+        <circle cx="3" cy="17" r="1.5" fill="#00D4AA"/>
+      </svg>
+      <span class="icon-label">Analytics</span>
+    </div>
+
+  </div>
+
+  <!-- ── Top-right subtle tag ── -->
+  <div style="position:absolute; top:18px; right:24px; font-family:'JetBrains Mono',monospace; font-size:9px; color:rgba(0,180,255,0.3); letter-spacing:2px;">FULL-STACK · 2025</div>
+
+</div>
+</body>
+</html>
