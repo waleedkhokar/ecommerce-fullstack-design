@@ -1,7 +1,7 @@
 # 🛍️ E-Commerce Full-Stack Platform
 
 ## 📋 Overview
-A modern, feature-rich e-commerce platform with a stunning UI, secure authentication, and seamless product management. This project was developed during my internship at **Developers Hub Corporation** as part of the frontend design task.
+A modern, feature-rich e-commerce platform with a stunning UI, secure authentication, and seamless product management. This project was used during my internship at **Developers Hub Corporation** as part of the frontend design task.
 
 ## ✨ Key Features
 - 🔐 **User Authentication** - Secure login/register functionality
@@ -9,7 +9,7 @@ A modern, feature-rich e-commerce platform with a stunning UI, secure authentica
 - 🛒 **Shopping Experience** - Product browsing and cart management
 - 📱 **Mobile First** - Perfectly optimized for all devices
 - 👑 **Role-Based Access** - Different views for admin and users
-- 🔍 **Product Search** - Advanced filtering and search capabilities
+- 🔍 **Product Search** - Advanced filtering and search capabilitiess
 
 ## 📸 Screenshots
 
